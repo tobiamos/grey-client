@@ -1,9 +1,55 @@
 <app-header></app-header>
+<p><br><br></p>
 <div class="container">
   <div>
-    <input type="search" name="filter" id="filter" class="form-control">
+    <input [(ngModel)]="filter" placeholder="filter products" type="search" name="filter" id="filter" class="form-control form-control-alternative">
   </div>
-  <ul class="list-group">
-    <li class="list-group-item"></li>
-  </ul>
+  <br>
+  <div class="card bg-default shadow">
+    <div class="card-header bg-transparent border-0">
+      <h3 class="text-white text-center">Products</h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table align-items-center table-dark table-flush">
+        <thead class="thead-dark">
+          <tr>
+              <th scope="col">S/N</th>
+              <th scope="col">Product</th>
+              <th scope="col">Price</th>
+              <th scope="col">View</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let product of products | filter: filter ; let i = index">
+          <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>
+              <a routerLink="/product/{{product.id}}" class="btn btn-1 btn-outline-info"><i class="fa fa-eye"></i> View Product</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example" class="mb-4">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">4</a>
+            </li>
+            <li class="page-item">
+              <a class="page-link" href="#">5</a>
+            </li>
+          </ul>
+        </nav>
+
+    </div>
+  </div>
 </div>

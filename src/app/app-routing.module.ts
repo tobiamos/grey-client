@@ -7,7 +7,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 const appRoutes: Routes = [
   {
     path: '',
-    component: ProductComponent
+    redirectTo: 'product',
+    pathMatch: 'full'
   },
   {
     path: 'product',
