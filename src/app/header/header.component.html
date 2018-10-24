@@ -20,22 +20,13 @@
           </div>
         </div>
       </div>
-      <!-- <ul class="navbar-nav ml-lg-auto">
-        <li *ngIf="!this.userLoggedIn()" class="nav-item">
-          <a class="nav-link" [routerLink]="[ '/register']">Register
+      <ul class="navbar-nav ml-lg-auto">
+        <li  class="nav-item">
+          <a class="nav-link" [routerLink]="[ '/add']">Add Product
             <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li *ngIf="!this.userLoggedIn()" class="nav-item">
-          <a class="nav-link"  [routerLink]="[ '/login']">Login</a>
-        </li>
-        <li *ngIf="this.userLoggedIn()" class="nav-item">
-          <a class="nav-link" routerLink="/bucketlist">Lists</a>
-        </li>
-        <li (click)="logOut()" *ngIf="this.userLoggedIn()" class="nav-item">
-          <a class="nav-link" routerLink="/bucketlist">Logout</a>
-        </li>
-      </ul> -->
+      </ul>
     </div>
   </div>
 </nav>
