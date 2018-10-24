@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductService } from './services/product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductAddComponent } from './product-add/product-add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ProductDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
