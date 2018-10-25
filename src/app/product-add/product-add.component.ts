@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProductService } from '../services/product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-add',
@@ -12,6 +13,7 @@ export class ProductAddComponent implements OnInit {
     constructor(
       private fb: FormBuilder,
       private productService: ProductService,
+      private router: Router,
     ) {
       this.createForm();
      }
@@ -36,6 +38,7 @@ export class ProductAddComponent implements OnInit {
     return this.productService.addProduct(data).subscribe(
       response => {
         this.productForm.reset();
+        this.router.navigate([`/product/${response['data']['id']}`]);
       },
       error => {
         console.error(error.error);
